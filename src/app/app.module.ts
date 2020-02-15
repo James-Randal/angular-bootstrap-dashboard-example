@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,9 +15,28 @@ import { FooterComponent } from './footer/footer.component';
 import { SideNavBarComponent } from './sidenavbar/sidenavbar.component';
 import { MaincontentComponent } from './maincontent/maincontent.component';
 
+import { DashboardComponent }   from './dashboard/dashboard.component';
+import { HelpscreenComponent }     from './helpscreen/helpscreen.component';
+
+
+const appRoutes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'helpscreen', component: HelpscreenComponent },
+  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
+];
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgbModule, ChartsModule, IconsModule],
-  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, HeaderComponent, FooterComponent, SideNavBarComponent, MaincontentComponent],
+  imports:      [ 
+    BrowserModule, 
+    FormsModule, 
+    NgbModule, 
+    ChartsModule, 
+    IconsModule, 
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )],
+  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, HeaderComponent, FooterComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
