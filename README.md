@@ -1,5 +1,4 @@
-# angular-ihrosj
-
+# angular-bootstrap-dashboard-example
 This is a simple angular / bootstrap admin dashboard starter template inspired by the bootstrap example. 
 
 The bootstrap example has been 'angularized' by leveraging the following packages
