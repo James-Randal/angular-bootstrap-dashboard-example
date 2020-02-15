@@ -15,6 +15,8 @@ import { MaincontentComponent } from './maincontent/maincontent.component';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HelpscreenComponent }     from './helpscreen/helpscreen.component';
+import { NotificationsService } from './notifications.service';
+import { NotificationscontainerComponent } from './notificationscontainer/notificationscontainer.component';
 
 
 const appRoutes: Routes = [
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )],
-  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent, NotificationscontainerComponent],
+  bootstrap:    [ AppComponent ],
+  providers: [NotificationsService]
 })
 export class AppModule { }

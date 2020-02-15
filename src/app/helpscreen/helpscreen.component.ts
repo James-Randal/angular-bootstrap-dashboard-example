@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationsService } from './../notifications.service';
 
 @Component({
   selector: 'app-helpscreen',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpscreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public notificationsService: NotificationsService) { }
 
   ngOnInit() {
+  }
+
+  showNotification(){
+    this.notificationsService.show('I am a standard toast');
   }
 
 }
