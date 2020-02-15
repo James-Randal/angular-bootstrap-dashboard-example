@@ -8,10 +8,10 @@ import { IconsModule } from './../icons/icons.module';
 
 import { AppComponent } from './app.component';
 import { MainlayoutComponent } from './mainlayout/mainlayout.component';
-import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { TopNavBarComponent } from './topnavbar/topnavbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
+import { SideNavBarComponent } from './sidenavbar/sidenavbar.component';
 import { MaincontentComponent } from './maincontent/maincontent.component';
 
 @NgModule({
