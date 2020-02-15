@@ -10,8 +10,6 @@ import { IconsModule } from './../icons/icons.module';
 import { AppComponent } from './app.component';
 import { MainlayoutComponent } from './mainlayout/mainlayout.component';
 import { TopNavBarComponent } from './topnavbar/topnavbar.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { SideNavBarComponent } from './sidenavbar/sidenavbar.component';
 import { MaincontentComponent } from './maincontent/maincontent.component';
 
@@ -36,7 +34,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )],
-  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, HeaderComponent, FooterComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent],
+  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
