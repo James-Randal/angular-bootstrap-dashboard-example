@@ -17,11 +17,13 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HelpscreenComponent }     from './helpscreen/helpscreen.component';
 import { NotificationsService } from './notifications.service';
 import { NotificationscontainerComponent } from './notificationscontainer/notificationscontainer.component';
+import { DemonstrationscreenComponent } from './demonstration/demonstrationscreen.component';
 
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'helpscreen', component: HelpscreenComponent },
+  { path: 'help', component: HelpscreenComponent },
+  { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )],
-  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent, NotificationscontainerComponent],
+  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent, NotificationscontainerComponent, DemonstrationscreenComponent],
   bootstrap:    [ AppComponent ],
   providers: [NotificationsService]
 })

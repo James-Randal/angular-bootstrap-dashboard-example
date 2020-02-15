@@ -1,5 +1,11 @@
 <ngb-toast
-  *ngFor="let toast of notificationsService.toasts"
-  [header]="toast.header" [autohide]="true" [delay]="toast.delay || 5000"
-  (hide)="notificationsService.remove(toast)"
->{{toast.body}}</ngb-toast>
+  *ngFor="let notification of notificationsService.notifications"
+  [header]="notification.header" [class]="notification.classname" [autohide]="true" [delay]="notification.delay || 5000"
+  (hide)="notificationsService.remove(notification)"
+>
+  <ng-template [ngIf]="isTemplate(notification)" [ngIfElse]="text">
+    <ng-template [ngTemplateOutlet]="notification.textOrTpl"></ng-template>
+  </ng-template>
+
+  <ng-template #text>{{ notification.textOrTpl }}</ng-template>
+</ngb-toast>

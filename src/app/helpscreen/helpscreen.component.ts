@@ -13,8 +13,6 @@ export class HelpscreenComponent implements OnInit {
   ngOnInit() {
   }
 
-  showNotification(){
-    this.notificationsService.show('I am a standard toast');
-  }
+  
 
 }
