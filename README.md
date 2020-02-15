@@ -1,5 +1,6 @@
 # angular-bootstrap-dashboard-example
-This is a simple angular / bootstrap admin dashboard starter template inspired by the bootstrap example. 
+
+This is a simple angular / bootstrap admin dashboard starter template inspired by this [bootstrap example](https://getbootstrap.com/docs/4.4/examples/dashboard/). 
 
 The bootstrap example has been 'angularized' by leveraging the following packages
 
