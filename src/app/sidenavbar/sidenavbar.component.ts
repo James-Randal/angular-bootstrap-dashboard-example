@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from './../../authentication/authentication.service';
+
 
 @Component({
   selector: 'app-sidenavbar',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavBarComponent implements OnInit {
 
-  constructor() { }
+   constructor(public authenticationService: AuthenticationService ) { }
 
   ngOnInit() {
   }

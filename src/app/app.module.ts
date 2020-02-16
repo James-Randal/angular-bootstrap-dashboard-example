@@ -21,11 +21,13 @@ import { NotificationscontainerComponent } from './notificationscontainer/notifi
 import { DemonstrationscreenComponent } from './demonstration/demonstrationscreen.component';
 
 import { AuthenticationGuard } from './../authentication/authentication.guard';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
+  { path: 'userprofile', component: UserprofileComponent },
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
@@ -41,7 +43,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )],
-  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent, NotificationscontainerComponent, DemonstrationscreenComponent],
+  declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent, NotificationscontainerComponent, DemonstrationscreenComponent, UserprofileComponent],
   bootstrap:    [ AppComponent ],
   providers: [NotificationsService]
 })
