@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng2-charts';
 
+import { AuthenticationModule } from './../authentication/authentication.module';
 import { IconsModule } from './../icons/icons.module';
 
 import { AppComponent } from './app.component';
@@ -19,9 +20,10 @@ import { NotificationsService } from './notifications.service';
 import { NotificationscontainerComponent } from './notificationscontainer/notificationscontainer.component';
 import { DemonstrationscreenComponent } from './demonstration/demonstrationscreen.component';
 
+import { AuthenticationGuard } from './../authentication/authentication.guard';
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
 @NgModule({
   imports:      [ 
     BrowserModule, 
-    FormsModule, 
+    FormsModule,
+    AuthenticationModule, 
     NgbModule, 
     ChartsModule, 
     IconsModule, 
