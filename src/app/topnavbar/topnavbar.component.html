@@ -2,13 +2,15 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
       <ul class="nav navbar-nav px-3 navbar-expand">
-         <li *ngIf="authenticationService.userProfile$ | async as profile" class="nav-item text-nowrap">
-            <a class="nav-link" href="#"{{ profile.name}}></a>
+         <li *ngIf="authenticationService.userProfile$ | async as profile" class="nav-item text-nowrap mr-3">
+           
+            <a class="nav-link" href="#"> <span><img class="mr-2" width="32" [src]="profile.picture"/></span><span>{{ profile.name}}</span></a>
+         
         </li>
         <li class="nav-item text-nowrap">
          
-          <a class="nav-link" href="#" (click)="authenticationService.login()" *ngIf="!authenticationService.loggedIn">Log In</a>
-          <a class="nav-link" href="#" (click)="authenticationService.logout()" *ngIf="authenticationService.loggedIn">Log Out</a>
+          <span *ngIf="!authenticationService.loggedIn" ><a class="nav-link" href="#" (click)="authenticationService.login()" >Log In</a></span>
+          <span *ngIf="authenticationService.loggedIn"><a class="nav-link" href="#" (click)="authenticationService.logout()" >Log Out</a></span>
         </li>
        
       </ul>

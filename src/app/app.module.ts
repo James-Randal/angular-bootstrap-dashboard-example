@@ -24,11 +24,10 @@ import { AuthenticationGuard } from './../authentication/authentication.guard';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
+  { path: 'dashboard', component: DashboardComponent,  },
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: 'userprofile', component: UserprofileComponent },
-  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({
