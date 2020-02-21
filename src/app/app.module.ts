@@ -28,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: 'userprofile', component: UserprofileComponent, canActivate: [AuthenticationGuard]},
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({
