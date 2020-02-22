@@ -11,8 +11,6 @@ import { AngularFireAuthModule  } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
-
-
 import { IconsModule } from './../icons/icons.module';
 
 import { AppComponent } from './app.component';
@@ -28,9 +26,6 @@ import { NotificationscontainerComponent } from './notificationscontainer/notifi
 import { DemonstrationscreenComponent } from './demonstration/demonstrationscreen.component';
 
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
-
-
 
 const config = {
     apiKey: "AIzaSyC-R27xDJMmsDJPrWAB3dHBlVqZbR6ry2c",
