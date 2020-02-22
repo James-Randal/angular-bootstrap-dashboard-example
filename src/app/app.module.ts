@@ -11,6 +11,8 @@ import { AngularFireAuthModule  } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
+
+
 import { IconsModule } from './../icons/icons.module';
 
 import { AppComponent } from './app.component';
@@ -47,7 +49,7 @@ const appRoutes: Routes = [
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: 'userprofile', component: UserprofileComponent , canActivate: [AngularFireAuthGuard]},
-  { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
+  //{ path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
   
 
 ];
@@ -59,6 +61,7 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     NgbModule, 
     ChartsModule, 
     IconsModule, 
