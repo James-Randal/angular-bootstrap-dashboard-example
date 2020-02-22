@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './../../authentication/authentication.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.component.html',
@@ -7,7 +9,7 @@ import { AuthenticationService } from './../../authentication/authentication.ser
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor(public authenticationService: AuthenticationService ) { }
+  constructor(public authenticationService: AngularFireAuth ) { }
 
   ngOnInit() {
   }

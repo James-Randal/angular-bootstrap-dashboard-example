@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './../../authentication/authentication.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthenticationService } from './../../authentication/authentication.ser
 })
 export class SideNavBarComponent implements OnInit {
 
-   constructor(public authenticationService: AuthenticationService ) { }
+   constructor(public authenticationService: AngularFireAuth ) { }
 
   ngOnInit() {
   }
