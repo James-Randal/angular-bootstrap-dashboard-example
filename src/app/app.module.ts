@@ -25,9 +25,9 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 
 const appRoutes: Routes = [
   
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
-  { path: 'help', component: HelpscreenComponent , canActivate: [AuthenticationGuard]},
-  { path: 'demonstration', component: DemonstrationscreenComponent , canActivate: [AuthenticationGuard]},
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'help', component: HelpscreenComponent },
+  { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: 'userprofile', component: UserprofileComponent , canActivate: [AuthenticationGuard]},
   { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
   
