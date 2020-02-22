@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav px-3 navbar-expand">
          <li *ngIf="authenticationService.userProfile$ | async as profile" class="nav-item text-nowrap mr-3">
            
-            <a class="nav-link" href="#"> <span><img class="mr-2" width="32" [src]="profile.picture"/></span><span>{{ profile.name}}</span></a>
+            <a routerLink="/userprofile" class="nav-link" > <span><img class="mr-2" width="32" [src]="profile.picture"/></span><span>{{ profile.name}}</span></a>
          
         </li>
         <li class="nav-item text-nowrap">
