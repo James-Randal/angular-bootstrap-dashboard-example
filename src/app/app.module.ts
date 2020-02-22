@@ -5,7 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng2-charts';
 
-import { AuthenticationModule } from './../authentication/authentication.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule  } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
 import { IconsModule } from './../icons/icons.module';
 
 import { AppComponent } from './app.component';
@@ -20,15 +25,28 @@ import { NotificationsService } from './notifications.service';
 import { NotificationscontainerComponent } from './notificationscontainer/notificationscontainer.component';
 import { DemonstrationscreenComponent } from './demonstration/demonstrationscreen.component';
 
-import { AuthenticationGuard } from './../authentication/authentication.guard';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+
+
+
+
+const config = {
+    apiKey: "AIzaSyC-R27xDJMmsDJPrWAB3dHBlVqZbR6ry2c",
+    authDomain: "angular-ihrosj.firebaseapp.com",
+    databaseURL: "https://angular-ihrosj.firebaseio.com",
+    projectId: "angular-ihrosj",
+    storageBucket: "angular-ihrosj.appspot.com",
+    messagingSenderId: "204456038588",
+    appId: "1:204456038588:web:118cb5ba8b7903296a40b9"
+};
+
 
 const appRoutes: Routes = [
   
   { path: 'dashboard', component: DashboardComponent },
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
-  { path: 'userprofile', component: UserprofileComponent , canActivate: [AuthenticationGuard]},
+  { path: 'userprofile', component: UserprofileComponent , canActivate: [AngularFireAuthGuard]},
   { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
   
 
@@ -38,7 +56,9 @@ const appRoutes: Routes = [
   imports:      [ 
     BrowserModule, 
     FormsModule,
-    AuthenticationModule, 
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     NgbModule, 
     ChartsModule, 
     IconsModule, 
