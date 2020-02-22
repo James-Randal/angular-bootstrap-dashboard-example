@@ -40,6 +40,7 @@ export class AuthenticationService {
   constructor(private router: Router) {
     // On initial load, check authentication state with authorization server
     // Set up local auth streams if user is already authenticated
+    debugger;
     this.localAuthSetup();
     // Handle redirect from Auth0 login
     this.handleAuthCallback();
