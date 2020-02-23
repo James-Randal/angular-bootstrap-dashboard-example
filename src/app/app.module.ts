@@ -45,7 +45,7 @@ const appRoutes: Routes = [
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
   { path: 'userprofile', component: UserprofileComponent },//, canActivate: [AngularFireAuthGuard]},
-  { path: '',   redirectTo: 'dashboard', pathMatch: 'full' , preser},
+  { path: '',   redirectTo: 'dashboard', pathMatch: 'full' }
   
 
 ];
