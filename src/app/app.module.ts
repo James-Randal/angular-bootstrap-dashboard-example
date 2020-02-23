@@ -28,14 +28,16 @@ import { DemonstrationscreenComponent } from './demonstration/demonstrationscree
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { AuthenticationService } from './authentication.service';
 
+import { environment } from './../environments/environment';
+
 const config = {
-    apiKey: "AIzaSyC-R27xDJMmsDJPrWAB3dHBlVqZbR6ry2c",
-    authDomain: "angular-ihrosj.firebaseapp.com",
-    databaseURL: "https://angular-ihrosj.firebaseio.com",
-    projectId: "angular-ihrosj",
-    storageBucket: "angular-ihrosj.appspot.com",
-    messagingSenderId: "204456038588",
-    appId: "1:204456038588:web:118cb5ba8b7903296a40b9"
+    apiKey: environment.firebaseConfig.apiKey,
+    authDomain: environment.firebaseConfig.authDomain,
+    databaseURL: environment.firebaseConfig.databaseURL,
+    projectId: environment.firebaseConfig.projectId,
+    storageBucket: environment.firebaseConfig.storageBucket,
+    messagingSenderId: environment.firebaseConfig.messagingSenderId,
+    appId: environment.firebaseConfig.appId
 };
 
 

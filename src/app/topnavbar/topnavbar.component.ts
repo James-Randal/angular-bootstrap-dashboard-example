@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../authentication.service';
-
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'app-topnavbar',
@@ -9,7 +9,11 @@ import { AuthenticationService } from './../authentication.service';
 })
 export class TopNavBarComponent implements OnInit {
 
-  constructor(public authenticationService: AuthenticationService ) { }
+  env:any ;
+
+  constructor(public authenticationService: AuthenticationService ) { 
+    this.env = environment;
+  }
 
   ngOnInit() {
   }
