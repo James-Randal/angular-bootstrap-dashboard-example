@@ -3,10 +3,28 @@ body {
   font-size: .875rem;
 }
 
+
+/*
+ * Icons
+ */
+
 .feather {
   width: 16px;
   height: 16px;
   vertical-align: text-bottom;
+}
+
+.icon-32 {
+  width:32px;
+  height: 32px;
+}
+
+
+.icon-32 > .feather{
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  vertical-align: middle;
 }
 
 /*

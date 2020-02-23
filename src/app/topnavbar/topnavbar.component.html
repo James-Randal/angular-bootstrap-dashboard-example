@@ -7,10 +7,10 @@
             <a routerLink="/userprofile" class="nav-link" > <span><img class="mr-2" width="32" [src]="profile.photoURL"/></span><span>{{ profile.displayName}}</span></a>
          
         </li>
-        <li class="nav-item text-nowrap">
+        <li class="nav-item text-nowrap mr-3">
          
-          <a class="nav-link" href="#"  *ngIf="!(authenticationService.authenticationFirebaseAuthService.user | async) as profile" (click)="authenticationService.login()" ><span>Sign In</span></a>
-          <a class="nav-link" href="#"  *ngIf="authenticationService.authenticationFirebaseAuthService.user | async as profile" (click)="authenticationService.logout()"><span>Sign Out</span></a>
+          <a class="nav-link" href="#"  *ngIf="!(authenticationService.authenticationFirebaseAuthService.user | async) as profile" (click)="authenticationService.login()" ><span><i-feather class="icon-32 mr-2" name="log-in"></i-feather></span><span>Sign In</span></a>
+          <a class="nav-link" href="#"  *ngIf="authenticationService.authenticationFirebaseAuthService.user | async as profile" (click)="authenticationService.logout()"><span><i-feather class="icon-32 mr-2" name="log-out"></i-feather></span><span>Sign Out</span></a>
         </li>
        
       </ul>
