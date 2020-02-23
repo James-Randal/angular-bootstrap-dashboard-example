@@ -1,7 +1,7 @@
 
    <div class="sidebar-sticky">
     <ul class="nav flex-column">
-      <li *ngIf="authenticationService.loggedIn" class="nav-item">
+      <li *ngIf="authenticationService.user | async as profile" class="nav-item">
         <a routerLink="/dashboard" routerLinkActive="active" class="nav-link" >
           <i-feather name="home"></i-feather>
           Dashboard
@@ -13,7 +13,7 @@
           Demonstration
         </a>
       </li>
-      <li *ngIf="authenticationService.loggedIn" class="nav-item">
+      <li *ngIf="authenticationService.user | async as profile" class="nav-item">
         <a routerLink="/userprofile" routerLinkActive="active" class="nav-link">
            <i-feather name="info"></i-feather>
           User Profile

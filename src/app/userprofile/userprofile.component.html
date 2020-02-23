@@ -1,3 +1,4 @@
-<pre *ngIf="authenticationService.userProfile$ | async as profile">
+<pre *ngIf="authenticationService.user | async as profile">
+  <span>{{ profile.displayName}}</span>
 <code>{{ profile | json }}</code>
 </pre>

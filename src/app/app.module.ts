@@ -26,6 +26,7 @@ import { NotificationscontainerComponent } from './notificationscontainer/notifi
 import { DemonstrationscreenComponent } from './demonstration/demonstrationscreen.component';
 
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { AuthenticationService } from './authentication.service';
 
 const config = {
     apiKey: "AIzaSyC-R27xDJMmsDJPrWAB3dHBlVqZbR6ry2c",
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'help', component: HelpscreenComponent },
   { path: 'demonstration', component: DemonstrationscreenComponent },
-  { path: 'userprofile', component: UserprofileComponent , canActivate: [AngularFireAuthGuard]},
+  { path: 'userprofile', component: UserprofileComponent },//, canActivate: [AngularFireAuthGuard]},
   //{ path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
   
 
@@ -65,6 +66,6 @@ const appRoutes: Routes = [
     )],
   declarations: [ AppComponent,  MainlayoutComponent, TopNavBarComponent, SideNavBarComponent, MaincontentComponent, DashboardComponent, HelpscreenComponent, NotificationscontainerComponent, DemonstrationscreenComponent, UserprofileComponent],
   bootstrap:    [ AppComponent ],
-  providers: [NotificationsService]
+  providers: [NotificationsService, AuthenticationService]
 })
 export class AppModule { }

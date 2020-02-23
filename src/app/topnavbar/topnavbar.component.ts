@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './../../authentication/authentication.service';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { AuthenticationService } from './../authentication.service';
+
 
 @Component({
   selector: 'app-topnavbar',
@@ -10,17 +9,11 @@ import { auth } from 'firebase/app';
 })
 export class TopNavBarComponent implements OnInit {
 
-  constructor(public authenticationService: AngularFireAuth ) { }
+  constructor(public authenticationService: AuthenticationService ) { }
 
   ngOnInit() {
   }
 
-  login() {
-    this.authenticationService.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
-  logout() {
-    this.authenticationService.auth.signOut();
-  }
 
 
 }

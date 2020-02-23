@@ -2,15 +2,15 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
       <ul class="nav navbar-nav px-3 navbar-expand">
-        <li *ngIf="authenticationService.user | async as profile" class="nav-item text-nowrap mr-3">
+        <li *ngIf="authenticationService.authenticationFirebaseAuthService.user | async as profile" class="nav-item text-nowrap mr-3">
            
-            <a routerLink="/userprofile" class="nav-link" > <span><img class="mr-2" width="32" [src]="profile.picture"/></span><span>{{ profile.displayName}}</span></a>
+            <a routerLink="/userprofile" class="nav-link" > <span><img class="mr-2" width="32" [src]="profile.photoURL"/></span><span>{{ profile.displayName}}</span></a>
          
         </li>
         <li class="nav-item text-nowrap">
          
-          <a class="nav-link" href="#" (click)="login()" ><span>Sign In</span></a>
-          <a class="nav-link" href="#" (click)="logout()"><span>Sign Out</span></a>
+          <a class="nav-link" href="#"  *ngIf="!(authenticationService.authenticationFirebaseAuthService.user | async) as profile" (click)="authenticationService.login()" ><span>Sign In</span></a>
+          <a class="nav-link" href="#"  *ngIf="authenticationService.authenticationFirebaseAuthService.user | async as profile" (click)="authenticationService.logout()"><span>Sign Out</span></a>
         </li>
        
       </ul>
